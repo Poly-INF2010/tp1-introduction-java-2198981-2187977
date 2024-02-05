@@ -41,7 +41,20 @@ public final class LetterFactory {
      * @return BaseShape containing the letter E
      */
     public static BaseShape create_E() {
-        return null;
+
+
+        Rectangle highBar = new Rectangle(halfStripeThickness, maxHeight);
+        Rectangle middleBar = new Rectangle(maxWidth, halfStripeThickness);
+        Rectangle middleBar2 = middleBar.clone();
+        middleBar2.translate(middleBar2.getCoords(), new Point2d(0.0, halfMaxHeight));
+        Rectangle middleBar3 = middleBar.clone();
+        middleBar3.translate(middleBar2.getCoords(), new Point2d(0.0, (maxHeight - halfStripeThickness)));
+
+        BaseShape E = new BaseShape();
+        E.add(highBar);
+        E.add(middleBar2);
+        E.add(middleBar3);
+        return E;
     }
 
     /** TODO
@@ -55,6 +68,7 @@ public final class LetterFactory {
         highBar2.translate(highBar2.getCoords(), new Point2d(maxWidth, 0.0));
         Rectangle middleBar = new Rectangle(maxWidth, stripeThickness);
         middleBar.translate(middleBar.getCoords(), new Point2d(0.0, halfMaxHeight));
+
         BaseShape H = new BaseShape();
         H.add(highBar);
         H.add(highBar2);
