@@ -15,15 +15,15 @@ public class Transform implements Rotate, Translate{
      * */
     public Collection<Point2d> rotate(Collection<Point2d> coords, Double angle) {
 
-        Collection<Point2d> rotated_coords = new LinkedList<>();
+        Collection<Point2d> rotatedCoords = new LinkedList<>();
 
         for (Point2d point : coords) {
-            Point2d rotated_point = point.rotate(angle);
-            rotated_coords.add(rotated_point);
+            Point2d rotatedPoint = point.rotate(angle);
+            rotatedCoords.add(rotatedPoint);
         }
 
         coords.clear();
-        return rotated_coords;
+        return rotatedCoords;
     }
 
     /** TODO
@@ -34,15 +34,15 @@ public class Transform implements Rotate, Translate{
      * */
     public Collection<Point2d> translate(Collection<Point2d> coords, Point2d translateVector) {
 
-        Collection<Point2d> translated_coords = new LinkedList<>();
+        Collection<Point2d> translatedCoords = new LinkedList<>();
 
 
         for (Point2d point : coords) {
-            Point2d translated_point = point.translate(translateVector);
-            translated_coords.add(translated_point);
+            Point2d translatedPoint = point.translate(translateVector);
+            translatedCoords.add(translatedPoint);
         }
 
         coords.clear();
-        return translated_coords;
+        return translatedCoords;
     }
 }
