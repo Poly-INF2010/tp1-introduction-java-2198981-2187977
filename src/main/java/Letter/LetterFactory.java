@@ -17,7 +17,22 @@ public final class LetterFactory {
      * @return BaseShape containing the letter A
      */
     public static BaseShape create_A()  {
-        return null;
+
+        Rectangle highBar = new Rectangle(halfStripeThickness, maxHeight);
+        Rectangle highBar2 = highBar.clone();
+        highBar.rotate(highBar.getCoords(), 30.0);
+        highBar2.translate(highBar2.getCoords(), new Point2d((maxWidth-halfStripeThickness), 0.0));
+        highBar2.rotate(highBar2.getCoords(), 315.0);
+
+
+        Rectangle middleBar = new Rectangle(halfMaxWidth, stripeThickness);
+        middleBar.translate(middleBar.getCoords(), new Point2d(0.0, halfMaxHeight));
+        BaseShape A = new BaseShape();
+        A.add(highBar);
+        A.add(highBar2);
+        A.add(middleBar);
+
+        return A;
     }
 
     /** TODO
