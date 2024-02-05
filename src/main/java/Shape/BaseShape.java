@@ -6,12 +6,12 @@ import java.util.Optional;
 import java.awt.*;
 import java.util.*;
 import java.util.stream.Collectors;
-
+//P
 public class BaseShape extends Transform implements Cloneable {
     private final Collection<Point2d> coords;
 
-//helper function to clone a list of points
-  public Collection<Point2d> cloneCoords(Collection<Point2d> coords) {
+    //helper function to clone a list of points
+    public Collection<Point2d> cloneCoords(Collection<Point2d> coords) {
         return coords.stream().map(Point2d::clone).collect(Collectors.toList());
     }
 
@@ -27,7 +27,7 @@ public class BaseShape extends Transform implements Cloneable {
      * @param coords The collection of 2D points
      */
     public BaseShape(Collection<Point2d> coords) {
-        this.coords = new ArrayList<>(coords);
+        this.coords = cloneCoords(coords);
     }
 
     /** TODO
@@ -112,8 +112,9 @@ public class BaseShape extends Transform implements Cloneable {
      */
     public Collection<Point2d> getCoords() {
 
-        Collection<Point2d> copyCoords = new ArrayList<>(coords);
-        return copyCoords;
+        Collection<Point2d> copy = new LinkedList<>(this.coords);
+
+        return copy;
     }
 
     /** TODO
@@ -132,7 +133,7 @@ public class BaseShape extends Transform implements Cloneable {
      * @return Maximum X coordinate of the shape
      */
     public Double getMaxX() {
-         double xMax = -Double.MAX_VALUE;
+        double xMax = -Double.MAX_VALUE;
         for (Point2d point : this.coords){
             if (xMax < point.X()) {
                 xMax = point.X();
