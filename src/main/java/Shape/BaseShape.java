@@ -6,7 +6,7 @@ import java.util.Optional;
 import java.awt.*;
 import java.util.*;
 import java.util.stream.Collectors;
-
+//P
 public class BaseShape extends Transform implements Cloneable {
     private final Collection<Point2d> coords;
 
