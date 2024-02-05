@@ -49,9 +49,20 @@ public final class LetterFactory {
      * @return BaseShape containing the letter H
      */
     public static BaseShape create_H() {
-        return null;
-    }
 
+        Rectangle highBar = new Rectangle(stripeThickness, maxHeight);
+        Rectangle highBar2 = highBar.clone();
+        highBar2.translate(highBar2.getCoords(), new Point2d(maxWidth, 0.0));
+        Rectangle middleBar = new Rectangle(maxWidth, stripeThickness);
+        middleBar.translate(middleBar.getCoords(), new Point2d(0.0, halfMaxHeight));
+        BaseShape H = new BaseShape();
+        H.add(highBar);
+        H.add(highBar2);
+        H.add(middleBar);
+        return H;
+
+
+    }
     /** TODO
      * Create the letter N graphically
      * @return BaseShape containing the letter N
