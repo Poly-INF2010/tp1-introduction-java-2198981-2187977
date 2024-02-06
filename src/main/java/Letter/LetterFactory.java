@@ -45,17 +45,18 @@ public final class LetterFactory {
      */
     public static BaseShape create_B() {
         //divise par 2 pour avoir le rayon du cercle
-        double radius = halfMaxWidth/2;
+        double radius = halfMaxHeight/2;
         Rectangle highBar = new Rectangle(stripeThickness, maxHeight);
+        Circle circle1 = new Circle(radius);
+        Circle circle2 = new Circle(radius);
         Circle hole = new Circle(halfMaxWidth);
-        Circle circle1 = new Circle(radius/2);
-        Circle circle2 = new Circle(radius/2);
-
-        circle2.removeAll(hole.getCoords());
         circle1.removeAll(hole.getCoords());
-        circle2.translate(circle2.getCoords(), new Point2d(0.0, -halfMaxHeight/2));
-        circle1.translate(circle1.getCoords(), new Point2d(0.0, halfMaxHeight/2));
-        highBar.translate(highBar.getCoords(), new Point2d(-halfMaxWidth,0.0));
+        circle2.removeAll(hole.getCoords());
+
+        highBar.translate(highBar.getCoords(), new Point2d(-halfMaxWidth, 0.0));
+        circle1.translate(circle1.getCoords(), new Point2d(0.0, -radius));
+        circle2.translate(circle2.getCoords(), new Point2d(0.0, radius));
+
 
         BaseShape B = new BaseShape();
         B.add(highBar);
