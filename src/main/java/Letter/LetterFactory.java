@@ -20,8 +20,8 @@ public final class LetterFactory {
 
         Rectangle highBar = new Rectangle(halfStripeThickness, maxHeight);
         Rectangle highBar2 = highBar.clone();
-        double angle1 = Math.toRadians(30.0);
-        double angle2 = Math.toRadians(330);
+        double angle1 = Math.toRadians(12.0);
+        double angle2 = Math.toRadians(348);
         highBar.rotate(highBar.getCoords(), angle1);
         highBar.translate(highBar.getCoords(), new Point2d(-maxWidth/4, 0.0));
 
@@ -30,7 +30,7 @@ public final class LetterFactory {
 
 
         Rectangle middleBar = new Rectangle(halfMaxWidth, stripeThickness);
-        middleBar.translate(middleBar.getCoords(), new Point2d(0.0, halfMaxHeight));
+        //middleBar.translate(middleBar.getCoords(), new Point2d(0.0, halfMaxHeight));
         BaseShape A = new BaseShape();
         A.add(highBar);
         A.add(highBar2);
@@ -133,9 +133,9 @@ public final class LetterFactory {
         Rectangle highBar = new Rectangle(halfStripeThickness, maxHeight);
         highBar.translate(highBar.getCoords(), new Point2d(-halfMaxWidth, 0.0));
         Rectangle highBar2 = highBar.clone();
-        highBar2.translate(highBar2.getCoords(), new Point2d(halfMaxWidth, 0.0));
-        Rectangle highBar3 = highBar2.clone();
-        highBar3.rotate(highBar3.getCoords(), Math.toRadians(315.0));
+        highBar2.translate(highBar2.getCoords(), new Point2d(maxWidth, 0.0));
+        Rectangle highBar3 = new Rectangle(halfStripeThickness, maxHeight);
+        highBar3.rotate(highBar3.getCoords(), Math.toRadians(340.0));
 
         BaseShape N = new BaseShape();
         N.add(highBar);
