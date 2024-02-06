@@ -71,8 +71,8 @@ public final class LetterFactory {
         Ellipse hole = new Ellipse(halfMaxWidth - halfStripeThickness, halfMaxHeight-halfStripeThickness);
         ellipse.remove(hole);
         Rectangle rectHole = new Rectangle(stripeThickness, halfMaxHeight);
-        rectHole.translate(rectangleHole.getCoords(), new Point2d(stripeThickness + 5, 0.0));
-        ellipse.removeAll(rectangleHole.getCoords());
+        rectHole.translate(rectHole.getCoords(), new Point2d(stripeThickness + 5, 0.0));
+        ellipse.removeAll(rectHole.getCoords());
 
         BaseShape C = new BaseShape();
         C.add(ellipse);
