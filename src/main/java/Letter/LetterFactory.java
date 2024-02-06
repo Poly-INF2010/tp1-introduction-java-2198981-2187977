@@ -89,6 +89,7 @@ public final class LetterFactory {
 
 
         Rectangle highBar = new Rectangle(halfStripeThickness, maxHeight);
+        highBar.translate(highBar.getCoords(), new Point2d(-halfMaxWidth, 0.0));
         Rectangle middleBar = new Rectangle(maxWidth, halfStripeThickness);
         Rectangle middleBar2 = middleBar.clone();
         middleBar2.translate(middleBar2.getCoords(), new Point2d(0.0, -halfMaxHeight));
