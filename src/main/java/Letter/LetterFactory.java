@@ -20,9 +20,11 @@ public final class LetterFactory {
 
         Rectangle highBar = new Rectangle(halfStripeThickness, maxHeight);
         Rectangle highBar2 = highBar.clone();
-        highBar.rotate(highBar.getCoords(), 30.0);
+        double angle1 = 30.0;
+        double angle2 = 315.0;
+        highBar.rotate(highBar.getCoords(), angle1);
         highBar2.translate(highBar2.getCoords(), new Point2d((maxWidth-halfStripeThickness), 0.0));
-        highBar2.rotate(highBar2.getCoords(), 315.0);
+        highBar2.rotate(highBar2.getCoords(), angle2);
 
 
         Rectangle middleBar = new Rectangle(halfMaxWidth, stripeThickness);
@@ -68,8 +70,8 @@ public final class LetterFactory {
         Ellipse ellipse = new Ellipse(halfMaxWidth, halfMaxHeight);
         Ellipse hole = new Ellipse(halfMaxWidth - halfStripeThickness, halfMaxHeight-halfStripeThickness);
         ellipse.remove(hole);
-        Rectangle rectangleHole = new Rectangle(stripeThickness, halfMaxHeight);
-        rectangleHole.translate(rectangleHole.getCoords(), new Point2d(stripeThickness + 5, 0.0));
+        Rectangle rectHole = new Rectangle(stripeThickness, halfMaxHeight);
+        rectHole.translate(rectangleHole.getCoords(), new Point2d(stripeThickness + 5, 0.0));
         ellipse.removeAll(rectangleHole.getCoords());
 
         BaseShape C = new BaseShape();
